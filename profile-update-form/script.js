@@ -67,6 +67,11 @@ function validateField(field) {
   let isValid = true;
 
   // Check if the field is empty
+
+  if (field.value.startsWith(" ")) {
+    field.value = field.value.trim();
+  }
+
   if (field.value.trim() === "") {
     isValid = false;
     const message = document.createElement("div");
